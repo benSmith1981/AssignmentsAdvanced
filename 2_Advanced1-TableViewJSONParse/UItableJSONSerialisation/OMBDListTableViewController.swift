@@ -10,6 +10,9 @@ import UIKit
 
 class OMBDListTableViewController: UITableViewController {
 
+    var currentEpisode: Episode?
+    var totalPages: Int = 0 //total pages returned from server
+
     var episodes = [Episode]() {
         didSet{
             //everytime savedarticles is added to or deleted from table is refreshed
@@ -21,21 +24,35 @@ class OMBDListTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        let json: AnyObject? = jsonString.parseJSONString
         
         self.tableView.register(UITableViewCell.self, forCellReuseIdentifier: "reuseIdentifier")
-
-        if let episodesDict = json as? NSDictionary,
-            let episodes = episodesDict["Episodes"] {
-                let episodes = episodes as! NSArray
-                self.episodes = Episode.modelsFromDictionaryArray(array: episodes)
+        
+        OMDBSearchService.sharedInstance.searchOMDBDatabaseByTitle(searchString: "Game of Thrones", page: 1, movieType: movieTypes.series.description) { (success, errorMessage, errorCodeString, movie, movies, totalPages) in
+//            MBProgressLoader.Hide()
+            
+            self.totalPages = totalPages! //force unwrap as we know will be zero or another INT
+            
+            if success {
+                if let movies = movies {
+                    self.episodes += movies
+                }
+            } else {
+                
+//                MBProgressLoader.Hide()
+                if let movie = movie{
+                    self.episodes.removeAll()
+                    self.episodes.append(movie)
+                }
+            }
         }
         
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem()
+//        let json: AnyObject? = jsonString.parseJSONString
+//        if let episodesDict = json as? NSDictionary,
+//            let episodes = episodesDict["Episodes"] {
+//                let episodes = episodes as! NSArray
+//                self.episodes = Episode.modelsFromDictionaryArray(array: episodes)
+//        }
+        
     }
 
     // MARK: - Table view data source
@@ -101,7 +118,7 @@ class OMBDListTableViewController: UITableViewController {
     }
     */
 
-    /*
+
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
@@ -109,9 +126,12 @@ class OMBDListTableViewController: UITableViewController {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
     }
-    */
+    
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if episodes.count >= 0 {
+            currentEpisode = episodes[indexPath.row]
+        }
         
     }
 

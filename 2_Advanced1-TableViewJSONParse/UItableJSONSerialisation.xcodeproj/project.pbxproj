@@ -14,8 +14,13 @@
 		BE339B011E312193002F29A2 /* UItableJSONSerialisationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE339B001E312193002F29A2 /* UItableJSONSerialisationTests.swift */; };
 		BE339B0C1E312193002F29A2 /* UItableJSONSerialisationUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE339B0B1E312193002F29A2 /* UItableJSONSerialisationUITests.swift */; };
 		BE339B1A1E3121ED002F29A2 /* OMBDListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE339B191E3121ED002F29A2 /* OMBDListTableViewController.swift */; };
-		BE339B1F1E3122C4002F29A2 /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE339B1E1E3122C4002F29A2 /* StringExtension.swift */; };
 		BE339B211E312414002F29A2 /* Episode.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE339B201E312414002F29A2 /* Episode.swift */; };
+		BECB993B1E33928500D600B9 /* OMDBSearchService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BECB993A1E33928500D600B9 /* OMDBSearchService.swift */; };
+		BECB993D1E3392C500D600B9 /* Enums.swift in Sources */ = {isa = PBXBuildFile; fileRef = BECB993C1E3392C500D600B9 /* Enums.swift */; };
+		BECB993F1E33930900D600B9 /* OMDBConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = BECB993E1E33930900D600B9 /* OMDBConstants.swift */; };
+		BECB99421E33939300D600B9 /* APIServiceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BECB99401E33939300D600B9 /* APIServiceManager.swift */; };
+		BECB99431E33939300D600B9 /* Manager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BECB99411E33939300D600B9 /* Manager.swift */; };
+		BECB99451E33939B00D600B9 /* RequestResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = BECB99441E33939B00D600B9 /* RequestResult.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,8 +54,13 @@
 		BE339B0B1E312193002F29A2 /* UItableJSONSerialisationUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UItableJSONSerialisationUITests.swift; sourceTree = "<group>"; };
 		BE339B0D1E312193002F29A2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BE339B191E3121ED002F29A2 /* OMBDListTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OMBDListTableViewController.swift; sourceTree = "<group>"; };
-		BE339B1E1E3122C4002F29A2 /* StringExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
 		BE339B201E312414002F29A2 /* Episode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Episode.swift; sourceTree = "<group>"; };
+		BECB993A1E33928500D600B9 /* OMDBSearchService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OMDBSearchService.swift; sourceTree = "<group>"; };
+		BECB993C1E3392C500D600B9 /* Enums.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Enums.swift; sourceTree = "<group>"; };
+		BECB993E1E33930900D600B9 /* OMDBConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OMDBConstants.swift; sourceTree = "<group>"; };
+		BECB99401E33939300D600B9 /* APIServiceManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIServiceManager.swift; sourceTree = "<group>"; };
+		BECB99411E33939300D600B9 /* Manager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Manager.swift; sourceTree = "<group>"; };
+		BECB99441E33939B00D600B9 /* RequestResult.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RequestResult.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,6 +111,8 @@
 		BE339AEA1E312192002F29A2 /* UItableJSONSerialisation */ = {
 			isa = PBXGroup;
 			children = (
+				BECB993E1E33930900D600B9 /* OMDBConstants.swift */,
+				BECB993C1E3392C500D600B9 /* Enums.swift */,
 				BE339B1D1E31229D002F29A2 /* DataLayer */,
 				BE339AEB1E312192002F29A2 /* AppDelegate.swift */,
 				BE339B191E3121ED002F29A2 /* OMBDListTableViewController.swift */,
@@ -133,8 +145,11 @@
 		BE339B1D1E31229D002F29A2 /* DataLayer */ = {
 			isa = PBXGroup;
 			children = (
+				BECB99401E33939300D600B9 /* APIServiceManager.swift */,
+				BECB99411E33939300D600B9 /* Manager.swift */,
+				BECB99441E33939B00D600B9 /* RequestResult.swift */,
 				BE339B201E312414002F29A2 /* Episode.swift */,
-				BE339B1E1E3122C4002F29A2 /* StringExtension.swift */,
+				BECB993A1E33928500D600B9 /* OMDBSearchService.swift */,
 			);
 			name = DataLayer;
 			sourceTree = "<group>";
@@ -273,10 +288,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BE339B1F1E3122C4002F29A2 /* StringExtension.swift in Sources */,
+				BECB99451E33939B00D600B9 /* RequestResult.swift in Sources */,
+				BECB99421E33939300D600B9 /* APIServiceManager.swift in Sources */,
 				BE339B211E312414002F29A2 /* Episode.swift in Sources */,
 				BE339B1A1E3121ED002F29A2 /* OMBDListTableViewController.swift in Sources */,
 				BE339AEC1E312192002F29A2 /* AppDelegate.swift in Sources */,
+				BECB993D1E3392C500D600B9 /* Enums.swift in Sources */,
+				BECB993B1E33928500D600B9 /* OMDBSearchService.swift in Sources */,
+				BECB99431E33939300D600B9 /* Manager.swift in Sources */,
+				BECB993F1E33930900D600B9 /* OMDBConstants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
