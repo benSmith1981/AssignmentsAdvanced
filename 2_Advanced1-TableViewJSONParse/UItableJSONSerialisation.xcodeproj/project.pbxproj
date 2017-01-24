@@ -145,13 +145,21 @@
 		BE339B1D1E31229D002F29A2 /* DataLayer */ = {
 			isa = PBXGroup;
 			children = (
-				BECB99401E33939300D600B9 /* APIServiceManager.swift */,
-				BECB99411E33939300D600B9 /* Manager.swift */,
+				BEAA4B2D1E37949500162AAB /* NSURLRequest */,
 				BECB99441E33939B00D600B9 /* RequestResult.swift */,
 				BE339B201E312414002F29A2 /* Episode.swift */,
 				BECB993A1E33928500D600B9 /* OMDBSearchService.swift */,
 			);
 			name = DataLayer;
+			sourceTree = "<group>";
+		};
+		BEAA4B2D1E37949500162AAB /* NSURLRequest */ = {
+			isa = PBXGroup;
+			children = (
+				BECB99401E33939300D600B9 /* APIServiceManager.swift */,
+				BECB99411E33939300D600B9 /* Manager.swift */,
+			);
+			name = NSURLRequest;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

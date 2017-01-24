@@ -46,13 +46,6 @@ class OMBDListTableViewController: UITableViewController {
             }
         }
         
-//        let json: AnyObject? = jsonString.parseJSONString
-//        if let episodesDict = json as? NSDictionary,
-//            let episodes = episodesDict["Episodes"] {
-//                let episodes = episodes as! NSArray
-//                self.episodes = Episode.modelsFromDictionaryArray(array: episodes)
-//        }
-        
     }
 
     // MARK: - Table view data source

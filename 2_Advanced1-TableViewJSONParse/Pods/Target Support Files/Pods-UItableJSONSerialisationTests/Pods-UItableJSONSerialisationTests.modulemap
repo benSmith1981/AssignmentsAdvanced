@@ -1,0 +1,6 @@
+framework module Pods_UItableJSONSerialisationTests {
+  umbrella header "Pods-UItableJSONSerialisationTests-umbrella.h"
+
+  export *
+  module * { export * }
+}
