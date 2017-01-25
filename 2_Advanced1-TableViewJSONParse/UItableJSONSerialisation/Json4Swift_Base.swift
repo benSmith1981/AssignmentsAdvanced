@@ -12,29 +12,27 @@ import Foundation
  
 /* For support, please feel free to contact me at https://www.linkedin.com/in/syedabsar */
 
-public class Episode {
-	public var title : String?
-	public var released : String?
-	public var episode : Int?
-	public var imdbRating : Double?
-	public var imdbID : String?
+public class Json4Swift_Base {
+	public var search : Array<Search>?
+	public var totalResults : Int?
+	public var response : Bool?
 
 /**
     Returns an array of models based on given dictionary.
     
     Sample usage:
-    let episodes_list = Episodes.modelsFromDictionaryArray(someDictionaryArrayFromJSON)
+    let json4Swift_Base_list = Json4Swift_Base.modelsFromDictionaryArray(someDictionaryArrayFromJSON)
 
     - parameter array:  NSArray from JSON dictionary.
 
-    - returns: Array of Episodes Instances.
+    - returns: Array of Json4Swift_Base Instances.
 */
-    public class func modelsFromDictionaryArray(array:NSArray) -> [Episode]
+    public class func modelsFromDictionaryArray(array:NSArray) -> [Json4Swift_Base]
     {
-        var models:[Episode] = []
+        var models:[Json4Swift_Base] = []
         for item in array
         {
-            models.append(Episode(dictionary: item as! NSDictionary)!)
+            models.append(Json4Swift_Base(dictionary: item as! NSDictionary)!)
         }
         return models
     }
@@ -43,19 +41,17 @@ public class Episode {
     Constructs the object based on the given dictionary.
     
     Sample usage:
-    let episodes = Episodes(someDictionaryFromJSON)
+    let json4Swift_Base = Json4Swift_Base(someDictionaryFromJSON)
 
     - parameter dictionary:  NSDictionary from JSON.
 
-    - returns: Episodes Instance.
+    - returns: Json4Swift_Base Instance.
 */
 	required public init?(dictionary: NSDictionary) {
 
-		title = dictionary["Title"] as? String
-		released = dictionary["Released"] as? String
-		episode = dictionary["Episode"] as? Int
-		imdbRating = dictionary["imdbRating"] as? Double
-		imdbID = dictionary["imdbID"] as? String
+		if (dictionary["Search"] != nil) { search = Search.modelsFromDictionaryArray(array: dictionary["Search"] as! NSArray) }
+		totalResults = dictionary["totalResults"] as? Int
+		response = dictionary["Response"] as? Bool
 	}
 
 		
@@ -68,11 +64,8 @@ public class Episode {
 
 		let dictionary = NSMutableDictionary()
 
-		dictionary.setValue(self.title, forKey: "Title")
-		dictionary.setValue(self.released, forKey: "Released")
-		dictionary.setValue(self.episode, forKey: "Episode")
-		dictionary.setValue(self.imdbRating, forKey: "imdbRating")
-		dictionary.setValue(self.imdbID, forKey: "imdbID")
+		dictionary.setValue(self.totalResults, forKey: "totalResults")
+		dictionary.setValue(self.response, forKey: "Response")
 
 		return dictionary
 	}

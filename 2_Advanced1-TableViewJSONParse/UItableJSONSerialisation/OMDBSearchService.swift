@@ -35,11 +35,11 @@ class OMDBSearchService {
                     
 //                    var searchResultsArray = Episode.modelsFromDictionaryArray(array: jsonResponseArray)
                     
-                    var searchResultsArray = [Episode]()
+                    var searchResultsArray = [Search]()
                     for searchResult in jsonResponseArray{
                         if let searchResult = searchResult as? BodyDataDictionary {
                             //parse and store json response
-                            let omdbSearchResponse = Episode.init(dictionary: searchResult as NSDictionary)
+                            let omdbSearchResponse = Search.init(dictionary: searchResult as NSDictionary)
                             searchResultsArray.append(omdbSearchResponse!)
                         }
                     }
@@ -51,7 +51,7 @@ class OMDBSearchService {
                 //To handle the case if we get the Dictionary OBject not an array
                 if let jsonResponseObject = jsonResponse {
                     //parse and store json response
-                    let omdbSearchResponse = Episode.init(dictionary: jsonResponseObject as NSDictionary)
+                    let omdbSearchResponse = Search.init(dictionary: jsonResponseObject as NSDictionary)
                     //return the movie object
                     onCompletion(success, error?.userInfo[NSLocalizedDescriptionKey] as? String, self.APIService.getErrorCodeDescription(error: error), omdbSearchResponse, nil, self.totalPages )
                     
@@ -60,21 +60,21 @@ class OMDBSearchService {
             } else { //the request failed return the error
                 if let jsonResponseObject = jsonResponse { //sometimes json response is an error message
                     //send back a movie object so the errors are displayed nicely on the table
-                    let omdbSearchResponse = Episode.init(dictionary: jsonResponseObject as NSDictionary)
+                    let omdbSearchResponse = Search.init(dictionary: jsonResponseObject as NSDictionary)
                     onCompletion(false, error?.userInfo[NSLocalizedDescriptionKey] as? String, self.APIService.getErrorCodeDescription(error: error), omdbSearchResponse, nil, self.totalPages )
                 } else { //sometimes you have to decode it!
                     //send back a movie object so the errors are displayed nicely on the table
                     if let error = error {
                         if let errorDescription = error.userInfo["NSDebugDescription"] {
-                            let omdbSearchResponse = Episode.init(dictionary: [serverResponseKeys.Response.description : errorDescription , serverResponseKeys.Error.description : self.APIService.getErrorCodeDescription(error: error)])
+                            let omdbSearchResponse = Search.init(dictionary: [serverResponseKeys.Response.description : errorDescription , serverResponseKeys.Error.description : self.APIService.getErrorCodeDescription(error: error)])
                             onCompletion(false, error.userInfo[NSLocalizedDescriptionKey] as? String, self.APIService.getErrorCodeDescription(error: error), omdbSearchResponse, nil, self.totalPages )
                         } else {
                             //no localised description but we have an NSError
-                            let omdbSearchResponse = Episode.init(dictionary: [serverResponseKeys.Response.description : "None" , serverResponseKeys.Error.description : self.APIService.getErrorCodeDescription(error: error)])
+                            let omdbSearchResponse = Search.init(dictionary: [serverResponseKeys.Response.description : "None" , serverResponseKeys.Error.description : self.APIService.getErrorCodeDescription(error: error)])
                             onCompletion(false, "Error Description Unknown", self.APIService.getErrorCodeDescription(error: error), omdbSearchResponse, nil, self.totalPages )
                         }
                     } else { //Unknown Error Case (can use switch here!?)
-                        let omdbSearchResponse = Episode.init(dictionary: [serverResponseKeys.Response.description : "None" , serverResponseKeys.Error.description : self.APIService.getErrorCodeDescription(error: nil)])
+                        let omdbSearchResponse = Search.init(dictionary: [serverResponseKeys.Response.description : "None" , serverResponseKeys.Error.description : self.APIService.getErrorCodeDescription(error: nil)])
                         onCompletion(false, "Error Unknown", "Error Code Unknown", omdbSearchResponse, nil, self.totalPages )
                     }
 
