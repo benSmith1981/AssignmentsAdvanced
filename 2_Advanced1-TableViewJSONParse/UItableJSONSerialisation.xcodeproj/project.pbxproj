@@ -13,6 +13,8 @@
 		BE168E0F1E37BF6500BFF6D2 /* Search.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE168E0D1E37BF6500BFF6D2 /* Search.swift */; };
 		BE2D58171E39493B0028D8F2 /* MovieCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE2D58151E39493B0028D8F2 /* MovieCell.swift */; };
 		BE2D581A1E3949900028D8F2 /* MovieCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BE2D58191E3949900028D8F2 /* MovieCell.xib */; };
+		BE2D581D1E39EA880028D8F2 /* MyCoolCustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE2D581B1E39EA880028D8F2 /* MyCoolCustomCell.swift */; };
+		BE2D581E1E39EA880028D8F2 /* MyCoolCustomCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BE2D581C1E39EA880028D8F2 /* MyCoolCustomCell.xib */; };
 		BE339AEC1E312192002F29A2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE339AEB1E312192002F29A2 /* AppDelegate.swift */; };
 		BE339AF11E312193002F29A2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BE339AEF1E312193002F29A2 /* Main.storyboard */; };
 		BE339AF31E312193002F29A2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BE339AF21E312193002F29A2 /* Assets.xcassets */; };
@@ -59,6 +61,8 @@
 		BE168E0D1E37BF6500BFF6D2 /* Search.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Search.swift; sourceTree = "<group>"; };
 		BE2D58151E39493B0028D8F2 /* MovieCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MovieCell.swift; sourceTree = "<group>"; };
 		BE2D58191E3949900028D8F2 /* MovieCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MovieCell.xib; sourceTree = "<group>"; };
+		BE2D581B1E39EA880028D8F2 /* MyCoolCustomCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyCoolCustomCell.swift; sourceTree = "<group>"; };
+		BE2D581C1E39EA880028D8F2 /* MyCoolCustomCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MyCoolCustomCell.xib; sourceTree = "<group>"; };
 		BE339AE81E312192002F29A2 /* UItableJSONSerialisation.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UItableJSONSerialisation.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BE339AEB1E312192002F29A2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BE339AF01E312193002F29A2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -135,6 +139,8 @@
 		BE2D58101E39280E0028D8F2 /* Custom Table Cells */ = {
 			isa = PBXGroup;
 			children = (
+				BE2D581B1E39EA880028D8F2 /* MyCoolCustomCell.swift */,
+				BE2D581C1E39EA880028D8F2 /* MyCoolCustomCell.xib */,
 				BE2D58151E39493B0028D8F2 /* MovieCell.swift */,
 				BE2D58191E3949900028D8F2 /* MovieCell.xib */,
 			);
@@ -336,6 +342,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BE339AF61E312193002F29A2 /* LaunchScreen.storyboard in Resources */,
+				BE2D581E1E39EA880028D8F2 /* MyCoolCustomCell.xib in Resources */,
 				BE339AF31E312193002F29A2 /* Assets.xcassets in Resources */,
 				BE2D581A1E3949900028D8F2 /* MovieCell.xib in Resources */,
 				BE339AF11E312193002F29A2 /* Main.storyboard in Resources */,
@@ -512,6 +519,7 @@
 				BECB99431E33939300D600B9 /* Manager.swift in Sources */,
 				BE2D58171E39493B0028D8F2 /* MovieCell.swift in Sources */,
 				BECB993F1E33930900D600B9 /* OMDBConstants.swift in Sources */,
+				BE2D581D1E39EA880028D8F2 /* MyCoolCustomCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
