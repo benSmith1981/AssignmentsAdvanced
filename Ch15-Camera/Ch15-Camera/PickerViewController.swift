@@ -9,7 +9,8 @@
 import UIKit
 
 class PickerViewController: UIViewController,
-                            UINavigationControllerDelegate {
+                            UINavigationControllerDelegate,
+                            UIImagePickerControllerDelegate{
 
     @IBOutlet weak var imageName: UITextField!
     @IBOutlet weak var imageView: UIImageView!
@@ -48,7 +49,7 @@ class PickerViewController: UIViewController,
 
 }
 
-extension PickerViewController: UIImagePickerControllerDelegate {
+extension PickerViewController {
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
         let chosenImage = info[UIImagePickerControllerOriginalImage] as! UIImage //2
