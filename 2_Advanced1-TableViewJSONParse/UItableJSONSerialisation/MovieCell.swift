@@ -28,8 +28,10 @@ class MovieCell: UITableViewCell {
 
     func setDataForView (movieData : Search) {
         self.movieTitle.text = movieData.title
-        let url = URL(string: movieData.poster!)
-        self.movieImageView.kf.setImage(with: url)
+        if let urlString = movieData.poster {
+            let url = URL(string: urlString)
+            self.movieImageView.kf.setImage(with: url)
+        }
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

@@ -12,9 +12,16 @@ import Kingfisher
 
 class OMBDListTableViewController: UITableViewController {
 
+    let searchController = UISearchController(searchResultsController: nil)
+
     var currentEpisode: Search?
     var totalPages: Int = 0 //total pages returned from server
-
+    
+    //MARK: paging variables for scroll down
+    var selectedScope: Int = 0 // the scope currently selected (movie, series, episode_
+    var currentPage: Int = 1 //current page we are scrolling on
+    var currentSearchText: String = "" //current page we are scrolling on
+    
     var episodes = [Search]() {
         didSet{
             //everytime savedarticles is added to or deleted from table is refreshed
@@ -29,6 +36,15 @@ class OMBDListTableViewController: UITableViewController {
         
         let nib = UINib(nibName: "MovieCell", bundle: nil)
         self.tableView.register(nib, forCellReuseIdentifier: "MovieCell")
+        
+        searchController.accessibilityLabel = "search"
+        searchController.searchResultsUpdater = self
+        searchController.dimsBackgroundDuringPresentation = false
+        definesPresentationContext = true
+        tableView.tableHeaderView = searchController.searchBar
+        //setup the scopes to search between
+        searchController.searchBar.scopeButtonTitles = ["Movie", "Episode", "All", "Series"]
+        searchController.searchBar.delegate = self
         
         OMDBSearchService.sharedInstance.searchOMDBDatabaseByTitle(searchString: "Game of Thrones", page: 1, movieType: movieTypes.series.description) { (success, errorMessage, errorCodeString, movie, movies, totalPages) in
 //            MBProgressLoader.Hide()

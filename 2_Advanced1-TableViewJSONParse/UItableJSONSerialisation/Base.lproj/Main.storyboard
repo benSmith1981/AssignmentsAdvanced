@@ -20,8 +20,19 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Root View Controller" id="Nk6-cy-Lgt"/>
+                    <connections>
+                        <outlet property="searchDisplayController" destination="euK-HQ-VtH" id="pyI-2u-dKe"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W0d-EJ-me3" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <searchDisplayController id="euK-HQ-VtH">
+                    <connections>
+                        <outlet property="delegate" destination="QfN-f1-9hE" id="RgR-B7-EJB"/>
+                        <outlet property="searchContentsController" destination="QfN-f1-9hE" id="ELD-u3-don"/>
+                        <outlet property="searchResultsDataSource" destination="QfN-f1-9hE" id="rc5-P5-fgp"/>
+                        <outlet property="searchResultsDelegate" destination="QfN-f1-9hE" id="zux-1M-uTc"/>
+                    </connections>
+                </searchDisplayController>
             </objects>
             <point key="canvasLocation" x="326" y="41"/>
         </scene>
