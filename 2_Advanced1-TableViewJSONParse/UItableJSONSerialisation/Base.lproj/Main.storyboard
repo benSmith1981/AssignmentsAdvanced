@@ -22,6 +22,7 @@
                     <navigationItem key="navigationItem" title="Root View Controller" id="Nk6-cy-Lgt"/>
                     <connections>
                         <outlet property="searchDisplayController" destination="euK-HQ-VtH" id="pyI-2u-dKe"/>
+                        <segue destination="egG-2I-Fh3" kind="show" identifier="detailView" id="PZV-UT-aod"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W0d-EJ-me3" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -35,6 +36,42 @@
                 </searchDisplayController>
             </objects>
             <point key="canvasLocation" x="326" y="41"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="GYN-SG-yRr">
+            <objects>
+                <viewController id="egG-2I-Fh3" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="KQN-cF-59j"/>
+                        <viewControllerLayoutGuide type="bottom" id="MFk-XN-2wf"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="4Qb-Z5-CYH">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xzy-LX-o5k">
+                                <frame key="frameInset" minX="119" minY="318" width="137" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="movietypes.movie"/>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <connections>
+                        <outlet property="searchDisplayController" destination="w0W-oM-qWe" id="Hvo-GT-ISO"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="son-J4-mNR" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <searchDisplayController id="w0W-oM-qWe">
+                    <connections>
+                        <outlet property="delegate" destination="egG-2I-Fh3" id="OQW-qh-hm3"/>
+                        <outlet property="searchContentsController" destination="egG-2I-Fh3" id="m5T-17-wLi"/>
+                        <outlet property="searchResultsDataSource" destination="egG-2I-Fh3" id="fNI-QZ-s56"/>
+                        <outlet property="searchResultsDelegate" destination="egG-2I-Fh3" id="2Pz-7P-b60"/>
+                    </connections>
+                </searchDisplayController>
+            </objects>
+            <point key="canvasLocation" x="1308" y="41"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="ANx-C0-QxF">

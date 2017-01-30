@@ -43,7 +43,10 @@ class OMBDListTableViewController: UITableViewController {
         definesPresentationContext = true
         tableView.tableHeaderView = searchController.searchBar
         //setup the scopes to search between
-        searchController.searchBar.scopeButtonTitles = ["Movie", "Episode", "All", "Series"]
+        searchController.searchBar.scopeButtonTitles = [movieTypesTitles.all.description,
+                                                        movieTypesTitles.episode.description,
+                                                        movieTypesTitles.movie.description,
+                                                        movieTypesTitles.series.description]
         searchController.searchBar.delegate = self
         
         OMDBSearchService.sharedInstance.searchOMDBDatabaseByTitle(searchString: "Game of Thrones", page: 1, movieType: movieTypes.series.description) { (success, errorMessage, errorCodeString, movie, movies, totalPages) in
@@ -73,12 +76,41 @@ class OMBDListTableViewController: UITableViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
+        OMDBSearchService.sharedInstance.searchMovieDetailsDatabase(imdbID: "", plot: plotTypes.FULL, response: .JSON) { (success, error, code, search, searchesArray, totalResults) in
+//            self.performSegue(withIdentifier: "detailView", sender: self)
+        }
     }
     
     
+    func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?){
+//        MBProgressLoader.Hide()
+        
+        if (segue.identifier == "detailView") {
+//            MBProgressLoader.Hide()
+            // initialize new view controller and cast it as your view controller
+//            let detailView = segue.destinationViewController as! OMDBDetailMovieView
+//            detailView.movieInfo = self.currentMovieSelected
+            
+        }
+    }
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if episodes.count >= 0 {
             currentEpisode = episodes[indexPath.row]
+            OMDBSearchService.sharedInstance.searchMovieDetailsDatabase(imdbID: (currentEpisode?.imdbID)!, plot: plotTypes.FULL, response: responseTypes.JSON, onCompletion: { (success, errorMessage, errorCode, movie, nil, searchText) in
+                
+                if success {
+                    if let movie = movie {
+                        // your new view controller should have property that will store passed value
+//                        self.currentMovieSelected = movie
+                        self.performSegue(withIdentifier: "detailView", sender: self)
+                    }
+                } else { //if error returned show the error in the table by adding it to our search results array and displaying that
+//                    MBProgressLoader.Hide()
+//                    self.searchResultMovies = []
+//                    self.searchResultMovies.append(movie!)
+                }
+            })
+
         }
         
     }

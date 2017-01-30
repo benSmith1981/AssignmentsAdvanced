@@ -7,7 +7,7 @@ target 'UItableJSONSerialisation' do
   pod 'Alamofire', '~> 4.3'
   pod 'Kingfisher', '~> 3.3'
   pod 'MBProgressHUD', '~> 0.9'
-
+  pod 'AGi18n', '~> 0.0'
 # Pods for UItableJSONSerialisation
 
   target 'UItableJSONSerialisationTests' do

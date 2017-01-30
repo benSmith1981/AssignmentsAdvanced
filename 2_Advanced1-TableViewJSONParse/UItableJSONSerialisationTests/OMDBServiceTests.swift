@@ -33,7 +33,6 @@ class OMDBServiceTests: XCTestCase {
                                                                             totalResults) in
             XCTAssertFalse(success, message!)
             
-            
         }
     }
     

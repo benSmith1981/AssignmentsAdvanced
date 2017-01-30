@@ -30,23 +30,26 @@ class UItableJSONSerialisationUITests: XCTestCase {
     
     func testTypingJaws() {
         
+        
         let app = XCUIApplication()
+        app.tables.buttons["Movie"].tap()
+        app.searchFields["Search"].tap()
         
-        app.tables.buttons["Episode"].tap()
-        
-        let searchSearchField = app.searchFields["Search"]
-        searchSearchField.typeText("J")
-        
-        app.keys["a"].tap()
-        searchSearchField.typeText("a")
+        let aKey = app.keys["a"]
+        aKey.tap()
+        aKey.tap()
         app.keys["w"].tap()
-        searchSearchField.typeText("w")
+        app.typeText("Jaw")
         
-        let element = app.children(matching: .window).element(boundBy: 0).children(matching: .other).element.children(matching: .other).element.children(matching: .other).element.children(matching: .other).element
+        let element = app.otherElements.containing(.navigationBar, identifier:"UIView").children(matching: .other).element.children(matching: .other).element.children(matching: .other).element
         element.tap()
         app.typeText("s")
         element.tap()
         app.typeText("\n")
+        element.press(forDuration: 0.3);
+        app.navigationBars["UIView"].buttons["Root View Controller"].tap()
+        
+        XCTAssertEqual(app.acc, <#T##expression2: [T : U]##[T : U]#>, <#T##message: String##String#>)
         
 
     }
