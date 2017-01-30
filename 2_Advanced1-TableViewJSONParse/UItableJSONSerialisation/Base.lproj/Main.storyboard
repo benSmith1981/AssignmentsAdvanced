@@ -22,7 +22,7 @@
                     <navigationItem key="navigationItem" title="Root View Controller" id="Nk6-cy-Lgt"/>
                     <connections>
                         <outlet property="searchDisplayController" destination="euK-HQ-VtH" id="pyI-2u-dKe"/>
-                        <segue destination="egG-2I-Fh3" kind="show" identifier="detailView" id="PZV-UT-aod"/>
+                        <segue destination="egG-2I-Fh3" kind="show" identifier="detailView" id="WqQ-KN-LEh"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W0d-EJ-me3" userLabel="First Responder" sceneMemberID="firstResponder"/>

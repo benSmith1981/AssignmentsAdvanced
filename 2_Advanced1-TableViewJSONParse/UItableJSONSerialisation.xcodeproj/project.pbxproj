@@ -22,6 +22,7 @@
 		BE339B0C1E312193002F29A2 /* UItableJSONSerialisationUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE339B0B1E312193002F29A2 /* UItableJSONSerialisationUITests.swift */; };
 		BE339B1A1E3121ED002F29A2 /* OMBDListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE339B191E3121ED002F29A2 /* OMBDListTableViewController.swift */; };
 		BE6035BC1E3F8A42007D8266 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = BE6035BE1E3F8A42007D8266 /* Localizable.strings */; };
+		BE6035C51E3FB8DF007D8266 /* OMDBDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE6035C41E3FB8DF007D8266 /* OMDBDetailViewController.swift */; };
 		BEC5962F1E3E8DEA0066838B /* OMDBServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEC5962E1E3E8DEA0066838B /* OMDBServiceTests.swift */; };
 		BEC596331E3E9B910066838B /* OMDBSearchController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEC596321E3E9B910066838B /* OMDBSearchController.swift */; };
 		BECB993B1E33928500D600B9 /* OMDBSearchService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BECB993A1E33928500D600B9 /* OMDBSearchService.swift */; };
@@ -83,6 +84,7 @@
 		BE6035B51E3F8A10007D8266 /* nl */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = nl; path = nl.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		BE6035C01E3F8A61007D8266 /* nl */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = nl; path = nl.lproj/Localizable.strings; sourceTree = "<group>"; };
 		BE6035C11E3F8A6D007D8266 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		BE6035C41E3FB8DF007D8266 /* OMDBDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OMDBDetailViewController.swift; sourceTree = "<group>"; };
 		BEC5962E1E3E8DEA0066838B /* OMDBServiceTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OMDBServiceTests.swift; sourceTree = "<group>"; };
 		BEC596321E3E9B910066838B /* OMDBSearchController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OMDBSearchController.swift; sourceTree = "<group>"; };
 		BECB993A1E33928500D600B9 /* OMDBSearchService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OMDBSearchService.swift; sourceTree = "<group>"; };
@@ -188,6 +190,7 @@
 				BE339B1D1E31229D002F29A2 /* DataLayer */,
 				BE339AEB1E312192002F29A2 /* AppDelegate.swift */,
 				BE339B191E3121ED002F29A2 /* OMBDListTableViewController.swift */,
+				BE6035C41E3FB8DF007D8266 /* OMDBDetailViewController.swift */,
 				BEC596321E3E9B910066838B /* OMDBSearchController.swift */,
 				BE339AEF1E312193002F29A2 /* Main.storyboard */,
 				BE339AF21E312193002F29A2 /* Assets.xcassets */,
@@ -522,6 +525,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BE6035C51E3FB8DF007D8266 /* OMDBDetailViewController.swift in Sources */,
 				BE168E0F1E37BF6500BFF6D2 /* Search.swift in Sources */,
 				BECB99451E33939B00D600B9 /* RequestResult.swift in Sources */,
 				BECB99421E33939300D600B9 /* APIServiceManager.swift in Sources */,

@@ -9,6 +9,7 @@
 /// <#Description#>
 import UIKit
 import Kingfisher
+import MBProgressHUD
 
 class OMBDListTableViewController: UITableViewController {
 
@@ -83,31 +84,38 @@ class OMBDListTableViewController: UITableViewController {
     
     
     func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?){
-//        MBProgressLoader.Hide()
         
         if (segue.identifier == "detailView") {
-//            MBProgressLoader.Hide()
             // initialize new view controller and cast it as your view controller
-//            let detailView = segue.destinationViewController as! OMDBDetailMovieView
-//            detailView.movieInfo = self.currentMovieSelected
+            let detailView = segue.destination as! OMDBDetailViewController
+            detailView.detailedMovieInfo = self.currentEpisode
             
         }
     }
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if episodes.count >= 0 {
             currentEpisode = episodes[indexPath.row]
-            OMDBSearchService.sharedInstance.searchMovieDetailsDatabase(imdbID: (currentEpisode?.imdbID)!, plot: plotTypes.FULL, response: responseTypes.JSON, onCompletion: { (success, errorMessage, errorCode, movie, nil, searchText) in
+            OMDBSearchService.sharedInstance.searchMovieDetailsDatabase(imdbID: (currentEpisode?.imdbID)!,
+                                                                        plot: plotTypes.FULL,
+                                                                        response: responseTypes.JSON,
+                                                                        onCompletion: { (
+                                                                                success,
+                                                                                errorMessage,
+                                                                                errorCode,
+                                                                                movie,
+                                                                                nil,
+                                                                                searchText) in
                 
                 if success {
                     if let movie = movie {
                         // your new view controller should have property that will store passed value
-//                        self.currentMovieSelected = movie
+                        self.currentEpisode = movie
                         self.performSegue(withIdentifier: "detailView", sender: self)
                     }
-                } else { //if error returned show the error in the table by adding it to our search results array and displaying that
-//                    MBProgressLoader.Hide()
-//                    self.searchResultMovies = []
-//                    self.searchResultMovies.append(movie!)
+                } else {
+                    //if error returned show the error in the table by adding it to our search results array and displaying that
+                    self.episodes = []
+                    self.episodes.append(movie!)
                 }
             })
 

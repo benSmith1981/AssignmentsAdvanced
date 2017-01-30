@@ -49,7 +49,6 @@ class UItableJSONSerialisationUITests: XCTestCase {
         element.press(forDuration: 0.3);
         app.navigationBars["UIView"].buttons["Root View Controller"].tap()
         
-        XCTAssertEqual(app.acc, <#T##expression2: [T : U]##[T : U]#>, <#T##message: String##String#>)
         
 
     }
