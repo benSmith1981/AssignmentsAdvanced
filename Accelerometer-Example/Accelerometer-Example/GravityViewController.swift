@@ -15,6 +15,8 @@ class GravityViewController: UIViewController,
     
     //get cmmotion manager
     let manager = CMMotionManager()
+    
+    
     let clunkManager = CMMotionManager()
 
     override func viewDidLoad() {

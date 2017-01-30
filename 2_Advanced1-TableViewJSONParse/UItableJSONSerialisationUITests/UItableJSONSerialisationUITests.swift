@@ -28,11 +28,27 @@ class UItableJSONSerialisationUITests: XCTestCase {
         super.tearDown()
     }
     
-    func testExample() {
+    func testTypingJaws() {
         
+        let app = XCUIApplication()
+        
+        app.tables.buttons["Episode"].tap()
+        
+        let searchSearchField = app.searchFields["Search"]
+        searchSearchField.typeText("J")
+        
+        app.keys["a"].tap()
+        searchSearchField.typeText("a")
+        app.keys["w"].tap()
+        searchSearchField.typeText("w")
+        
+        let element = app.children(matching: .window).element(boundBy: 0).children(matching: .other).element.children(matching: .other).element.children(matching: .other).element.children(matching: .other).element
+        element.tap()
+        app.typeText("s")
+        element.tap()
+        app.typeText("\n")
         
 
-        
     }
     
 }
