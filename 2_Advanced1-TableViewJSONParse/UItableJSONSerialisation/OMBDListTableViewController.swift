@@ -73,18 +73,11 @@ class OMBDListTableViewController: UITableViewController {
     
     // MARK: - Navigation
     
+    
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
-        OMDBSearchService.sharedInstance.searchMovieDetailsDatabase(imdbID: "", plot: plotTypes.FULL, response: .JSON) { (success, error, code, search, searchesArray, totalResults) in
-//            self.performSegue(withIdentifier: "detailView", sender: self)
-        }
-    }
-    
-    
-    func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?){
-        
         if (segue.identifier == "detailView") {
             // initialize new view controller and cast it as your view controller
             let detailView = segue.destination as! DetailViewController
