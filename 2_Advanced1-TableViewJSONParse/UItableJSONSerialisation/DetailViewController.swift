@@ -48,7 +48,7 @@ class DetailViewController: UIViewController {
         let plotCell = UINib(nibName: "PlotCell", bundle:nil)
         let infoCell = UINib(nibName: "InfoCell", bundle:nil)
 
-        self.tableView.register(posterCell, forCellReuseIdentifier: "posterCellID")
+        self.tableView.register(posterCell, forCellReuseIdentifier: "fullImageCellID")
         self.tableView.register(titleCell, forCellReuseIdentifier: "titleCellID")
         self.tableView.register(plotCell, forCellReuseIdentifier: "plotCellID")
         self.tableView.register(infoCell, forCellReuseIdentifier: "infoCellID")

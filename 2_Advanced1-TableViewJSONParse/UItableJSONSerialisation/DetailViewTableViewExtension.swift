@@ -63,7 +63,7 @@ extension DetailViewController : UITableViewDelegate, UITableViewDataSource {
         switch indexPath.section {
        
         case 0:
-            let cell = tableView.dequeueReusableCell(withIdentifier: "posterCellID", for: indexPath) as!FullImageCell
+            let cell = tableView.dequeueReusableCell(withIdentifier: "fullImageCellID", for: indexPath) as!FullImageCell
             
             cell.fullImageView?.kf.setImage(with: URL(string: (self.detailMovieObject?.poster)!))
             cell.smallImageView.kf.setImage(with: URL(string: (self.detailMovieObject?.poster)!))
