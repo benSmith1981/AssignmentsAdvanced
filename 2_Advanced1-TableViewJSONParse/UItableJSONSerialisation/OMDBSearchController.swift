@@ -14,29 +14,26 @@ extension OMBDListTableViewController: UISearchResultsUpdating{
     
     @available(iOS 8.0, *)
     public func updateSearchResults(for searchController: UISearchController) {
-        //
-    }
-
-    
-    func scheduledSearch(searchBar: UISearchBar, page: Int, scope: String = "") {
-//        let popTime: dispatch_time_t = DispatchTime.now(dispatch_time_t(DispatchTime.now), Int64(OMDBConstants.SEARCH_DELAY_IN_MS * NSEC_PER_MSEC))
-//        //the value of text is retained in the thread we spawn off main queue
-//        let text = searchBar.text ?? ""
-//        
-//        DispatchQueue.(popTime, DispatchQueue.main) {
-//            if text == searchBar.text {
-//                let scope = self.determineScope(scopeTitle: searchBar.scopeButtonTitles![self.selectedScope])
-//                self.doSearch(searchString: text, page: self.currentPage, movieTypeScope: scope)
-//            }
-//        }
-    }
-    
-    func updateSearchResultsForSearchController(searchController: UISearchController) {
         //Filter content for search
         if searchController.isActive && (searchController.searchBar.text?.characters.count)! >= 2 && self.currentSearchText != searchController.searchBar.text {
             self.episodes = []
             let searchBar = searchController.searchBar
             self.scheduledSearch(searchBar: searchController.searchBar,page: self.currentPage, scope: searchBar.scopeButtonTitles![searchBar.selectedScopeButtonIndex])
+        }
+    }
+
+    
+    func scheduledSearch(searchBar: UISearchBar, page: Int, scope: String = "") {
+        let popTime = DispatchTime.init(uptimeNanoseconds: OMDBConstants.SEARCH_DELAY_IN_MS * NSEC_PER_MSEC)
+        
+        //the value of text is retained in the thread we spawn off main queue
+        let text = searchBar.text ?? ""
+        
+        DispatchQueue.main.asyncAfter(deadline: popTime) { 
+            if text == searchBar.text {
+                let scope = self.determineScope(scopeTitle: searchBar.scopeButtonTitles![self.selectedScope])
+                self.doSearch(searchString: text, page: self.currentPage, movieTypeScope: scope)
+            }
         }
     }
 }
@@ -120,13 +117,6 @@ extension OMBDListTableViewController {
             if success {
                 if let movies = movies {
                     self.episodes += movies
-                }
-            } else {
-                
-//                MBProgressLoader.Hide()
-                if let movie = movie{
-                    self.episodes.removeAll()
-                    self.episodes.append(movie)
                 }
             }
         }

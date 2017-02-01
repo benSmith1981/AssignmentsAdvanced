@@ -1,15 +1,18 @@
 //
-//  MyCoolCustomCell.swift
-//  UItableJSONSerialisation
+//  InfoCell.swift
+//  OMDB
 //
-//  Created by Ben Smith on 26/01/17.
-//  Copyright © 2017 Ben Smith. All rights reserved.
+//  Created by Ivo  Nederlof on 31-01-17.
+//  Copyright © 2017 Dutch Melon. All rights reserved.
 //
 
 import UIKit
 
-class MyCoolCustomCell: UITableViewCell {
-
+class InfoCell: UITableViewCell {
+    
+    @IBOutlet var titleInfo: UILabel!
+    @IBOutlet var titleValue: UILabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

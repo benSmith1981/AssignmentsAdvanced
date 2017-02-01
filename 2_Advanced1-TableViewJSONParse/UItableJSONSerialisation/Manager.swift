@@ -25,13 +25,13 @@ class Manager: NSObject {
      - parameter httpMethod: httpMethods
      - return NSURLRequest, the request created to be executed by makeRequest
      */
-    func setupRequest(path: String, body: BodyDataDictionary?, httpHeader: [String:String], httpMethod: httpMethods) throws -> NSURLRequest {
+    func setupRequest(path: NSURL, body: BodyDataDictionary?, httpHeader: [String:String], httpMethod: httpMethods) throws -> NSURLRequest {
         
         //remove illegal characters in url
         //specific to swift 3
-        let escapedAddress = path.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)
+//        let escapedAddress = path.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)
 
-        let request = NSMutableURLRequest(url: NSURL(string: escapedAddress!)! as URL)
+        let request = NSMutableURLRequest(url: path as URL)
 
         request.allHTTPHeaderFields = httpHeader //["Content-Type": "application/json", "Yona-Password": password]
         
@@ -59,7 +59,7 @@ extension Manager {
      - parameter httpHeader:[String:String], the header set to a JSON type
      - parameter onCompletion:APIServiceResponse The response from the API service, giving success or fail, dictionary response and any error
      */
-    func makeRequest(path: String, body: BodyDataDictionary?, httpMethod: httpMethods, httpHeader:[String:String], onCompletion: @escaping APIServiceResponse)
+    func makeRequest(path: NSURL, body: BodyDataDictionary?, httpMethod: httpMethods, httpHeader:[String:String], onCompletion: @escaping APIServiceResponse)
     {
         do{
             let request = try setupRequest(path: path, body: body, httpHeader: httpHeader, httpMethod: httpMethod)

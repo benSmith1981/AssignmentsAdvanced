@@ -24,7 +24,7 @@ class APIServiceManager {
      - parameter httpMethod: httpMethods, the httpmethod enum (post, get , put, delete)
      - parameter onCompletion:APIServiceResponse The response from the API service, giving success or fail, dictionary response and any error
      */
-    func callRequestWithAPIServiceResponse(body: BodyDataDictionary?, path: String, httpMethod: httpMethods, onCompletion:@escaping APIServiceResponse){
+    func callRequestWithAPIServiceResponse(body: BodyDataDictionary?, path: NSURL, httpMethod: httpMethods, onCompletion:@escaping APIServiceResponse){
         
         //incase the server can return different languages send it the language
         let langId = Locale.current.languageCode
