@@ -10,6 +10,7 @@
 import UIKit
 import Kingfisher
 import MBProgressHUD
+import RealmSwift
 
 class OMBDListTableViewController: UITableViewController {
 
@@ -102,6 +103,7 @@ class OMBDListTableViewController: UITableViewController {
                 
                 if success {
                     if let movie = movie {
+                        RealmWrite.sharedInstance.writeMovieHistory(history: self.currentEpisode!)
                         // your new view controller should have property that will store passed value
                         self.detailMovie = movie
                         self.performSegue(withIdentifier: "detailView", sender: self)

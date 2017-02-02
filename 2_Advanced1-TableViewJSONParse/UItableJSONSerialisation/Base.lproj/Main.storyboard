@@ -21,7 +21,7 @@
                     </tableView>
                     <navigationItem key="navigationItem" title="Root View Controller" id="Nk6-cy-Lgt"/>
                     <connections>
-                        <segue destination="rhR-Vh-Lue" kind="show" id="SfZ-bH-5BA"/>
+                        <segue destination="rhR-Vh-Lue" kind="show" identifier="detailView" id="SfZ-bH-5BA"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W0d-EJ-me3" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -63,10 +63,10 @@
             </objects>
             <point key="canvasLocation" x="-2119" y="162"/>
         </scene>
-        <!--Table View Controller-->
+        <!--Favourites Table View-->
         <scene sceneID="wvG-le-KJt">
             <objects>
-                <tableViewController id="JMn-6j-Vqn" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="reuseCell" id="JMn-6j-Vqn" customClass="FavouritesTableView" customModule="UItableJSONSerialisation" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="AZ3-xi-tWv">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

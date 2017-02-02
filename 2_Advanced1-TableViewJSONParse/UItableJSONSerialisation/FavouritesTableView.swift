@@ -7,19 +7,30 @@
 //
 
 import UIKit
+import RealmSwift
 
 class FavouritesTableView: UITableViewController {
 
-        
+    var history: Results<Search> = RealmRequest.sharedInstance.getMovieHistory(){
+        didSet{
+            //everytime savedarticles is added to or deleted from table is refreshed
+            self.tableView.reloadData()
+        }
+    }
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        var history = RealmRequest.sharedInstance.getMovieHistory()
-
+        self.history = RealmRequest.sharedInstance.getMovieHistory()
+        self.tableView.register(UITableViewCell.self, forCellReuseIdentifier: "reuseCell")
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
+    }
+    
+    override func awakeFromNib() {
+        self.history = RealmRequest.sharedInstance.getMovieHistory()
     }
 
     override func didReceiveMemoryWarning() {
@@ -31,23 +42,23 @@ class FavouritesTableView: UITableViewController {
 
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 0
+        return 1
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 0
+        return history.count
     }
 
-    /*
+    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
-
-        // Configure the cell...
+        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseCell", for: indexPath)
+        var searchSaved = history[indexPath.row]
+        cell.textLabel?.text = searchSaved.title
 
         return cell
     }
-    */
+ 
 
     /*
     // Override to support conditional editing of the table view.

@@ -42,7 +42,7 @@ class OMDBSearchService {
                         if let searchResult = searchResult as? BodyDataDictionary {
                             //parse and store json response
                             let omdbSearchResponse = Search.init(dictionary: searchResult as NSDictionary)
-                            searchResultsArray.append(omdbSearchResponse!)
+                            searchResultsArray.append(omdbSearchResponse)
                         }
                     }
                     

@@ -39,16 +39,16 @@ class RealmWrite {
     ///   - title: The main movie/serie title
     ///   - imdbID: imdb id for checking
     ///   - poster: the poster url for getting the
-    public func writeMovieHistory(search: NSDictionary) {
+    public func writeMovieHistory(history: Search) {
         
-        let history = Search.init(dictionary: search)
+//        let history = Search.init(dictionary: search)
 
         do {
             let realm = try Realm(),
                 total = realm.objects(Search.self).count
             if checkIfExtends(total, max: 10) {
                 try realm.write {
-                    realm.add(history!)
+                    realm.add(history)
                 }
                 print("total in history : \(total)")
 
