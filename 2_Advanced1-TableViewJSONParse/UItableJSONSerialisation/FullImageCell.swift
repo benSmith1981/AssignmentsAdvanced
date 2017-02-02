@@ -58,7 +58,7 @@ class FullImageCell: UITableViewCell {
         smallImageView.backgroundColor = UIColor.white
         smallImageView.layer.shadowRadius = 4
         
-         smallImageView.layer.shadowColor = UIColor.black.cgColor
+        smallImageView.layer.shadowColor = UIColor.black.cgColor
  
         
     }
