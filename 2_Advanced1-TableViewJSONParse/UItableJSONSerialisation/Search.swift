@@ -9,15 +9,15 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 */
 
 import Foundation
- 
+import RealmSwift
 /* For support, please feel free to contact me at https://www.linkedin.com/in/syedabsar */
 
-public class Search {
-	public var title : String?
-	public var year : String?
-	public var imdbID : String?
-	public var type : String?
-	public var poster : String?
+public class Search: Object {
+	dynamic public var title : String?
+	dynamic public var year : String?
+	dynamic public var imdbID : String?
+	dynamic public var type : String?
+	dynamic public var poster : String?
 
 /**
     Returns an array of models based on given dictionary.
@@ -34,7 +34,7 @@ public class Search {
         var models:[Search] = []
         for item in array
         {
-            models.append(Search(dictionary: item as! NSDictionary)!)
+            models.append(Search(dictionary: item as! NSDictionary))
         }
         return models
     }
@@ -49,7 +49,7 @@ public class Search {
 
     - returns: Search Instance.
 */
-	required public init?(dictionary: NSDictionary) {
+	required public init(dictionary: NSDictionary) {
 
 		title = dictionary["Title"] as? String
 		year = dictionary["Year"] as? String
@@ -57,7 +57,6 @@ public class Search {
 		type = dictionary["Type"] as? String
 		poster = dictionary["Poster"] as? String
 	}
-
 		
 /**
     Returns the dictionary representation for the current instance.

@@ -35,6 +35,9 @@
 		BE38F8CD1E4270FD00DC7391 /* DetailObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE38F8CC1E4270FD00DC7391 /* DetailObject.swift */; };
 		BE38F8CF1E42715500DC7391 /* Parameters.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE38F8CE1E42715500DC7391 /* Parameters.swift */; };
 		BE38F8D21E42729900DC7391 /* ErrorObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE38F8D11E42729800DC7391 /* ErrorObject.swift */; };
+		BE38F8D51E43B86700DC7391 /* FavouritesTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE38F8D41E43B86700DC7391 /* FavouritesTableView.swift */; };
+		BE38F8DA1E43C40700DC7391 /* RealmWrite.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE38F8D81E43C40700DC7391 /* RealmWrite.swift */; };
+		BE38F8DB1E43C40700DC7391 /* RealmRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE38F8D91E43C40700DC7391 /* RealmRequest.swift */; };
 		BE6035BC1E3F8A42007D8266 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = BE6035BE1E3F8A42007D8266 /* Localizable.strings */; };
 		BEC5962F1E3E8DEA0066838B /* OMDBServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEC5962E1E3E8DEA0066838B /* OMDBServiceTests.swift */; };
 		BEC596331E3E9B910066838B /* OMDBSearchController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEC596321E3E9B910066838B /* OMDBSearchController.swift */; };
@@ -105,6 +108,9 @@
 		BE38F8CC1E4270FD00DC7391 /* DetailObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailObject.swift; sourceTree = "<group>"; };
 		BE38F8CE1E42715500DC7391 /* Parameters.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Parameters.swift; sourceTree = "<group>"; };
 		BE38F8D11E42729800DC7391 /* ErrorObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ErrorObject.swift; sourceTree = "<group>"; };
+		BE38F8D41E43B86700DC7391 /* FavouritesTableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FavouritesTableView.swift; sourceTree = "<group>"; };
+		BE38F8D81E43C40700DC7391 /* RealmWrite.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RealmWrite.swift; sourceTree = "<group>"; };
+		BE38F8D91E43C40700DC7391 /* RealmRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RealmRequest.swift; sourceTree = "<group>"; };
 		BE6035B21E3F8A05007D8266 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Main.strings; sourceTree = "<group>"; };
 		BE6035B31E3F8A06007D8266 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		BE6035B41E3F8A10007D8266 /* nl */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = nl; path = nl.lproj/Main.strings; sourceTree = "<group>"; };
@@ -207,17 +213,17 @@
 		BE339AEA1E312192002F29A2 /* UItableJSONSerialisation */ = {
 			isa = PBXGroup;
 			children = (
+				BE38F8D71E43C3F900DC7391 /* Realm */,
+				BE38F8B11E42595800DC7391 /* MainNavigation.swift */,
+				BE38F8D61E43B87100DC7391 /* Favourites */,
+				BE38F8D31E43B7CF00DC7391 /* SearchView */,
 				BE38F8D01E42716100DC7391 /* Enums and Structs */,
 				BE38F8C91E4270AB00DC7391 /* detailcell */,
-				BE6035BE1E3F8A42007D8266 /* Localizable.strings */,
 				BE2D58101E39280E0028D8F2 /* Custom Table Cells */,
-				BECB993E1E33930900D600B9 /* OMDBConstants.swift */,
 				BE339B1D1E31229D002F29A2 /* DataLayer */,
 				BE339AEB1E312192002F29A2 /* AppDelegate.swift */,
-				BE339B191E3121ED002F29A2 /* OMBDListTableViewController.swift */,
-				BEC596321E3E9B910066838B /* OMDBSearchController.swift */,
-				BE38F8B11E42595800DC7391 /* MainNavigation.swift */,
 				BE339AEF1E312193002F29A2 /* Main.storyboard */,
+				BE6035BE1E3F8A42007D8266 /* Localizable.strings */,
 				BE339AF21E312193002F29A2 /* Assets.xcassets */,
 				BE339AF41E312193002F29A2 /* LaunchScreen.storyboard */,
 				BE339AF71E312193002F29A2 /* Info.plist */,
@@ -249,10 +255,10 @@
 				BE38F8D11E42729800DC7391 /* ErrorObject.swift */,
 				BE38F8CC1E4270FD00DC7391 /* DetailObject.swift */,
 				BE168E0D1E37BF6500BFF6D2 /* Search.swift */,
-				BEAA4B2D1E37949500162AAB /* NSURLRequest */,
 				BECB99441E33939B00D600B9 /* RequestResult.swift */,
 				BE38F8AF1E4200B300DC7391 /* APIController.swift */,
 				BECB993A1E33928500D600B9 /* OMDBSearchService.swift */,
+				BEAA4B2D1E37949500162AAB /* NSURLRequest */,
 			);
 			name = DataLayer;
 			sourceTree = "<group>";
@@ -277,12 +283,39 @@
 		BE38F8D01E42716100DC7391 /* Enums and Structs */ = {
 			isa = PBXGroup;
 			children = (
+				BECB993E1E33930900D600B9 /* OMDBConstants.swift */,
 				BECB993C1E3392C500D600B9 /* Enums.swift */,
 				BE38F8CE1E42715500DC7391 /* Parameters.swift */,
 				BE38F8CA1E4270EC00DC7391 /* Sizes.swift */,
 				BE38F8B31E42597D00DC7391 /* Color.swift */,
 			);
 			name = "Enums and Structs";
+			sourceTree = "<group>";
+		};
+		BE38F8D31E43B7CF00DC7391 /* SearchView */ = {
+			isa = PBXGroup;
+			children = (
+				BE339B191E3121ED002F29A2 /* OMBDListTableViewController.swift */,
+				BEC596321E3E9B910066838B /* OMDBSearchController.swift */,
+			);
+			name = SearchView;
+			sourceTree = "<group>";
+		};
+		BE38F8D61E43B87100DC7391 /* Favourites */ = {
+			isa = PBXGroup;
+			children = (
+				BE38F8D41E43B86700DC7391 /* FavouritesTableView.swift */,
+			);
+			name = Favourites;
+			sourceTree = "<group>";
+		};
+		BE38F8D71E43C3F900DC7391 /* Realm */ = {
+			isa = PBXGroup;
+			children = (
+				BE38F8D81E43C40700DC7391 /* RealmWrite.swift */,
+				BE38F8D91E43C40700DC7391 /* RealmRequest.swift */,
+			);
+			name = Realm;
 			sourceTree = "<group>";
 		};
 		BEAA4B2D1E37949500162AAB /* NSURLRequest */ = {
@@ -587,12 +620,15 @@
 				BE168E0F1E37BF6500BFF6D2 /* Search.swift in Sources */,
 				BECB99451E33939B00D600B9 /* RequestResult.swift in Sources */,
 				BECB99421E33939300D600B9 /* APIServiceManager.swift in Sources */,
+				BE38F8D51E43B86700DC7391 /* FavouritesTableView.swift in Sources */,
 				BE38F8B41E42597D00DC7391 /* Color.swift in Sources */,
 				BE38F8CD1E4270FD00DC7391 /* DetailObject.swift in Sources */,
 				BE38F8B21E42595800DC7391 /* MainNavigation.swift in Sources */,
 				BE38F8C71E4270A700DC7391 /* DetailViewController.swift in Sources */,
+				BE38F8DB1E43C40700DC7391 /* RealmRequest.swift in Sources */,
 				BE38F8BF1E4270A700DC7391 /* FullImageCell.swift in Sources */,
 				BE339B1A1E3121ED002F29A2 /* OMBDListTableViewController.swift in Sources */,
+				BE38F8DA1E43C40700DC7391 /* RealmWrite.swift in Sources */,
 				BE38F8C31E4270A700DC7391 /* InfoCell.swift in Sources */,
 				BE38F8CB1E4270EC00DC7391 /* Sizes.swift in Sources */,
 				BE339AEC1E312192002F29A2 /* AppDelegate.swift in Sources */,

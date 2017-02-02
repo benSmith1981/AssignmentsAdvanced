@@ -35,13 +35,9 @@ class FullImageCell: UITableViewCell {
         setupSmallImage()
     }
     
-
-    
     func setupimage() {
-        
         fullImageView.clipsToBounds = true
         fullImageView.layer.masksToBounds = true
-        
     }
     
     func setupSmallImage() {
