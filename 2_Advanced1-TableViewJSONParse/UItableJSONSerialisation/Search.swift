@@ -55,29 +55,6 @@ public class Search {
 		type = dictionary["Type"] as? String
 		poster = dictionary["Poster"] as? String
 	}
-//
-//    required public init() {
-//        super.init()
-////        title = ""
-////        year = ""
-////        imdbID = ""
-////        type = ""
-////        poster = ""
-//    }
-//    
-//    required public init(value: Any, schema: RLMSchema) {
-//        super.init()
-//    }
-//    
-//    required public init(realm: RLMRealm, schema: RLMObjectSchema) {
-//        super.init()
-////        title = "hi"
-////        year = "YES"
-////        imdbID = ""
-////        type = ""
-////        poster = ""
-//    }
-
 		
 /**
     Returns the dictionary representation for the current instance.

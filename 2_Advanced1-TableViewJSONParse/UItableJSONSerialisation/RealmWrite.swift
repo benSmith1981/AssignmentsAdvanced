@@ -47,7 +47,7 @@ class RealmWrite {
         do {
             let realm = try Realm(),
                 total = realm.objects(RealmSearchObject.self).count
-            if checkIfExtends(total, max: 10) {
+            if checkIfExtends(total, max: 20) {
                 try realm.write {
                     realm.add(realmSearchObject)
                 }

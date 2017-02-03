@@ -12,7 +12,11 @@ import Kingfisher
 import MBProgressHUD
 import RealmSwift
 
-class OMBDListTableViewController: UITableViewController {
+protocol favMovieDelegate: class {
+    func favMovie(movieSearchData: Search)
+}
+
+class OMBDListTableViewController: UITableViewController, favMovieDelegate {
 
     let searchController = UISearchController(searchResultsController: nil)
 
@@ -103,7 +107,6 @@ class OMBDListTableViewController: UITableViewController {
                 
                 if success {
                     if let movie = movie {
-                        RealmWrite.sharedInstance.writeSearchHistory(searchObjectToStore: self.currentEpisode!)
                         // your new view controller should have property that will store passed value
                         self.detailMovie = movie
                         self.performSegue(withIdentifier: "detailView", sender: self)
@@ -118,6 +121,11 @@ class OMBDListTableViewController: UITableViewController {
         
     }
 
+    // MARK: - Favourite moview protocol function
+    
+    func favMovie(movieSearchData: Search) {
+        RealmWrite.sharedInstance.writeSearchHistory(searchObjectToStore: movieSearchData)
+    }
 }
 
 extension OMBDListTableViewController {
@@ -140,6 +148,7 @@ extension OMBDListTableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 
         let cell: MovieCell = self.tableView.dequeueReusableCell(withIdentifier: "MovieCell", for: indexPath) as! MovieCell
+        cell.delegate = self
         cell.setDataForView(movieData: self.episodes[indexPath.row])
         return cell
     }
@@ -158,4 +167,6 @@ extension OMBDListTableViewController {
             }
         }
     }
+
+
 }

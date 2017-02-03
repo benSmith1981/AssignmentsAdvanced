@@ -21,7 +21,8 @@ class FavouritesTableView: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.history = RealmRequest.sharedInstance.getMovieHistory()
-        self.tableView.register(UITableViewCell.self, forCellReuseIdentifier: "reuseCell")
+        let nib = UINib(nibName: "MovieCell", bundle: nil)
+        self.tableView.register(nib, forCellReuseIdentifier: "MovieCell")
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
@@ -29,7 +30,7 @@ class FavouritesTableView: UITableViewController {
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
     }
     
-    override func awakeFromNib() {
+    override func viewWillAppear(_ animated: Bool) {
         self.history = RealmRequest.sharedInstance.getMovieHistory()
     }
 
@@ -52,10 +53,10 @@ class FavouritesTableView: UITableViewController {
 
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseCell", for: indexPath)
+        let cell: MovieCell = self.tableView.dequeueReusableCell(withIdentifier: "MovieCell", for: indexPath) as! MovieCell
         var searchSaved = history[indexPath.row]
-        cell.textLabel?.text = searchSaved.title
-
+        cell.favouriteButton.isHidden = true
+        cell.setRealmDataForView(movieData: searchSaved)
         return cell
     }
  

@@ -11,9 +11,12 @@ import Kingfisher
 
 class MovieCell: UITableViewCell {
 
+    @IBOutlet weak var favouriteButton: UIButton!
     @IBOutlet weak var movieImageView: UIImageView!
     @IBOutlet weak var movieTitle: UILabel!
     @IBOutlet weak var movieText: UITextView!
+    var movieData: Search?
+    weak var delegate: favMovieDelegate?
     
     //This is called first when you are using a XIB file or from a storyboard
     override func awakeFromNib() {
@@ -26,7 +29,7 @@ class MovieCell: UITableViewCell {
         super.layoutSubviews()
     }
 
-    func setDataForView (movieData : Search) {
+    func setRealmDataForView (movieData : RealmSearchObject) {
         self.movieTitle.text = movieData.title
         if let urlString = movieData.poster {
             let url = URL(string: urlString)
@@ -34,6 +37,21 @@ class MovieCell: UITableViewCell {
         }
     }
 
+    func setDataForView (movieData : Search) {
+        self.movieData = movieData
+        self.movieTitle.text = movieData.title
+        if let urlString = movieData.poster {
+            let url = URL(string: urlString)
+            self.movieImageView.kf.setImage(with: url)
+        }
+    }
+
+    @IBAction func favouriteMovie(_ sender: AnyObject) {
+        if let dataToSave = self.movieData {
+            delegate?.favMovie(movieSearchData: dataToSave)
+        }
+    }
+    
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
 

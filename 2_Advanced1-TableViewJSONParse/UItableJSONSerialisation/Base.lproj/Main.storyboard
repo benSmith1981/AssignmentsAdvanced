@@ -28,11 +28,11 @@
             </objects>
             <point key="canvasLocation" x="495" y="41"/>
         </scene>
-        <!--Item-->
+        <!--Main Navigation-->
         <scene sceneID="ANx-C0-QxF">
             <objects>
                 <navigationController id="YZK-fd-McN" customClass="MainNavigation" customModule="UItableJSONSerialisation" customModuleProvider="target" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="PIh-Y5-rnB"/>
+                    <tabBarItem key="tabBarItem" systemItem="search" id="PIh-Y5-rnB"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="euR-KC-nO0">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -67,20 +67,10 @@
         <scene sceneID="wvG-le-KJt">
             <objects>
                 <tableViewController storyboardIdentifier="reuseCell" id="JMn-6j-Vqn" customClass="FavouritesTableView" customModule="UItableJSONSerialisation" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="AZ3-xi-tWv">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="134" sectionHeaderHeight="28" sectionFooterHeight="28" id="AZ3-xi-tWv">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="JGl-b8-8Pa">
-                                <rect key="frame" x="0.0" y="92" width="375" height="44"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="JGl-b8-8Pa" id="4aq-W1-Wyd">
-                                    <frame key="frameInset" width="375" height="44"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                </tableViewCellContentView>
-                            </tableViewCell>
-                        </prototypes>
                         <connections>
                             <outlet property="dataSource" destination="JMn-6j-Vqn" id="69R-6Y-ulK"/>
                             <outlet property="delegate" destination="JMn-6j-Vqn" id="zxB-yP-4RQ"/>
@@ -158,11 +148,11 @@
             </objects>
             <point key="canvasLocation" x="1415" y="41"/>
         </scene>
-        <!--Item-->
+        <!--Navigation Controller-->
         <scene sceneID="QWS-lA-OaC">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="ee9-6Q-5kl" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="bOd-Kf-ybG"/>
+                    <tabBarItem key="tabBarItem" systemItem="favorites" id="bOd-Kf-ybG"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="zIi-pr-c0h">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
