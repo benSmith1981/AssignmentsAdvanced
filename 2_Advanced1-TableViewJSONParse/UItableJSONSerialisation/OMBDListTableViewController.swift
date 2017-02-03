@@ -103,7 +103,7 @@ class OMBDListTableViewController: UITableViewController {
                 
                 if success {
                     if let movie = movie {
-                        RealmWrite.sharedInstance.writeMovieHistory(history: self.currentEpisode!)
+                        RealmWrite.sharedInstance.writeSearchHistory(searchObjectToStore: self.currentEpisode!)
                         // your new view controller should have property that will store passed value
                         self.detailMovie = movie
                         self.performSegue(withIdentifier: "detailView", sender: self)

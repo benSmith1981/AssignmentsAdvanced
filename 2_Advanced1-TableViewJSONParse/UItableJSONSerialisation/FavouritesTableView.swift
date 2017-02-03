@@ -11,7 +11,7 @@ import RealmSwift
 
 class FavouritesTableView: UITableViewController {
 
-    var history: Results<Search> = RealmRequest.sharedInstance.getMovieHistory(){
+    var history: Results<RealmSearchObject> = RealmRequest.sharedInstance.getMovieHistory(){
         didSet{
             //everytime savedarticles is added to or deleted from table is refreshed
             self.tableView.reloadData()

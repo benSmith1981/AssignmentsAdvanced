@@ -9,16 +9,14 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 */
 
 import Foundation
-import RealmSwift
-import Realm
 /* For support, please feel free to contact me at https://www.linkedin.com/in/syedabsar */
 
-public class Search: Object {
-	dynamic public var title : String?
-	dynamic public var year : String?
-	dynamic public var imdbID : String?
-	dynamic public var type : String?
-	dynamic public var poster : String?
+public class Search {
+    public var title : String?
+    public var year : String?
+    public var imdbID : String?
+    public var type : String?
+    public var poster : String?
 
 /**
     Returns an array of models based on given dictionary.
@@ -30,7 +28,7 @@ public class Search: Object {
 
     - returns: Array of Search Instances.
 */
-    dynamic public class func modelsFromDictionaryArray(array:NSArray) -> [Search]
+    public class func modelsFromDictionaryArray(array:NSArray) -> [Search]
     {
         var models:[Search] = []
         for item in array
@@ -51,35 +49,34 @@ public class Search: Object {
     - returns: Search Instance.
 */
 	required public init(dictionary: NSDictionary) {
-        super.init()
 		title = dictionary["Title"] as? String
 		year = dictionary["Year"] as? String
 		imdbID = dictionary["imdbID"] as? String
 		type = dictionary["Type"] as? String
 		poster = dictionary["Poster"] as? String
 	}
-    
-    required public init() {
-        super.init()
-//        title = ""
-//        year = ""
-//        imdbID = ""
-//        type = ""
-//        poster = ""
-    }
-    
-    required public init(value: Any, schema: RLMSchema) {
-        super.init()
-    }
-    
-    required public init(realm: RLMRealm, schema: RLMObjectSchema) {
-        super.init()
-//        title = "hi"
-//        year = "YES"
-//        imdbID = ""
-//        type = ""
-//        poster = ""
-    }
+//
+//    required public init() {
+//        super.init()
+////        title = ""
+////        year = ""
+////        imdbID = ""
+////        type = ""
+////        poster = ""
+//    }
+//    
+//    required public init(value: Any, schema: RLMSchema) {
+//        super.init()
+//    }
+//    
+//    required public init(realm: RLMRealm, schema: RLMObjectSchema) {
+//        super.init()
+////        title = "hi"
+////        year = "YES"
+////        imdbID = ""
+////        type = ""
+////        poster = ""
+//    }
 
 		
 /**
@@ -87,7 +84,7 @@ public class Search: Object {
     
     - returns: NSDictionary.
 */
-	dynamic public func dictionaryRepresentation() -> NSDictionary {
+    public func dictionaryRepresentation() -> NSDictionary {
 
 		let dictionary = NSMutableDictionary()
 

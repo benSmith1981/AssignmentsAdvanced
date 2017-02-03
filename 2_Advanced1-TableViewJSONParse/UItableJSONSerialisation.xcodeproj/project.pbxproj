@@ -38,6 +38,7 @@
 		BE38F8D51E43B86700DC7391 /* FavouritesTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE38F8D41E43B86700DC7391 /* FavouritesTableView.swift */; };
 		BE38F8DA1E43C40700DC7391 /* RealmWrite.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE38F8D81E43C40700DC7391 /* RealmWrite.swift */; };
 		BE38F8DB1E43C40700DC7391 /* RealmRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE38F8D91E43C40700DC7391 /* RealmRequest.swift */; };
+		BE38F9571E448DA000DC7391 /* RealmSearchObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE38F9561E448DA000DC7391 /* RealmSearchObject.swift */; };
 		BE6035BC1E3F8A42007D8266 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = BE6035BE1E3F8A42007D8266 /* Localizable.strings */; };
 		BEC5962F1E3E8DEA0066838B /* OMDBServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEC5962E1E3E8DEA0066838B /* OMDBServiceTests.swift */; };
 		BEC596331E3E9B910066838B /* OMDBSearchController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEC596321E3E9B910066838B /* OMDBSearchController.swift */; };
@@ -111,6 +112,7 @@
 		BE38F8D41E43B86700DC7391 /* FavouritesTableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FavouritesTableView.swift; sourceTree = "<group>"; };
 		BE38F8D81E43C40700DC7391 /* RealmWrite.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RealmWrite.swift; sourceTree = "<group>"; };
 		BE38F8D91E43C40700DC7391 /* RealmRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RealmRequest.swift; sourceTree = "<group>"; };
+		BE38F9561E448DA000DC7391 /* RealmSearchObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RealmSearchObject.swift; sourceTree = "<group>"; };
 		BE6035B21E3F8A05007D8266 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Main.strings; sourceTree = "<group>"; };
 		BE6035B31E3F8A06007D8266 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		BE6035B41E3F8A10007D8266 /* nl */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = nl; path = nl.lproj/Main.strings; sourceTree = "<group>"; };
@@ -314,6 +316,7 @@
 			children = (
 				BE38F8D81E43C40700DC7391 /* RealmWrite.swift */,
 				BE38F8D91E43C40700DC7391 /* RealmRequest.swift */,
+				BE38F9561E448DA000DC7391 /* RealmSearchObject.swift */,
 			);
 			name = Realm;
 			sourceTree = "<group>";
@@ -628,6 +631,7 @@
 				BE38F8DB1E43C40700DC7391 /* RealmRequest.swift in Sources */,
 				BE38F8BF1E4270A700DC7391 /* FullImageCell.swift in Sources */,
 				BE339B1A1E3121ED002F29A2 /* OMBDListTableViewController.swift in Sources */,
+				BE38F9571E448DA000DC7391 /* RealmSearchObject.swift in Sources */,
 				BE38F8DA1E43C40700DC7391 /* RealmWrite.swift in Sources */,
 				BE38F8C31E4270A700DC7391 /* InfoCell.swift in Sources */,
 				BE38F8CB1E4270EC00DC7391 /* Sizes.swift in Sources */,

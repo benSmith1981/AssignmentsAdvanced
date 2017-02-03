@@ -14,8 +14,8 @@ class RealmRequest {
     static let sharedInstance = RealmRequest()
     private init() {}
     
-    func getMovieHistory() -> Results<Search> {
+    func getMovieHistory() -> Results<RealmSearchObject> {
         let realm = try! Realm()
-        return realm.objects(Search.self)
+        return realm.objects(RealmSearchObject.self)
     }
 }
