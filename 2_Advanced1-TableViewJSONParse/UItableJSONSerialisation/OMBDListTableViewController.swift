@@ -55,25 +55,6 @@ class OMBDListTableViewController: UITableViewController, favMovieDelegate {
                                                         movieTypesTitles.series.description]
         searchController.searchBar.delegate = self
         
-//        OMDBSearchService.sharedInstance.searchOMDBDatabaseByTitle(searchString: "Game of Thrones", page: 1, movieType: movieTypes.series.description) { (success, errorMessage, errorCodeString, movie, movies, totalPages) in
-////            MBProgressLoader.Hide()
-//            
-//            self.totalPages = totalPages! //force unwrap as we know will be zero or another INT
-//            
-//            if success {
-//                if let movies = movies {
-//                    self.episodes += movies
-//                }
-//            } else {
-//                
-////                MBProgressLoader.Hide()
-//                if let movie = movie{
-//                    self.episodes.removeAll()
-//                    self.episodes.append(movie)
-//                }
-//            }
-//        }
-        
     }
     
     // MARK: - Navigation

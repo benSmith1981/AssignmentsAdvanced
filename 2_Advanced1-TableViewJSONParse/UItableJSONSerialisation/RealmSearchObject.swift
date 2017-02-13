@@ -17,8 +17,6 @@ class RealmSearchObject: Object {
     dynamic var type : String?
     dynamic var poster : String?
 
-
-    
 }
 
 extension RealmSearchObject {

@@ -117,12 +117,13 @@ class OMDBSearchService {
 
         //if we have selected all then don't include scope type
         if (movieType == movieTypes.all.description){
-            urlPath = OMDBSearchService.apiController.createURLWithComponents(term: SearchTerm.byTitle(searchString)) as NSURL?
-            searchMovieGeneric(path: urlPath!, onCompletion: onCompletion)
+            urlPath = OMDBSearchService.apiController.createURLWithComponents(term: SearchTerm.byTitle(searchString), page: page) as NSURL?
+           searchMovieGeneric(path: urlPath! , onCompletion: onCompletion)
 
-//            path = OMDBConstants.baseUrls.omdbPath + OMDBConstants.parameters.searchTitle + "=" + searchString + "&" + OMDBConstants.parameters.page + "=" + String(page)
         } else {
             urlPath = OMDBSearchService.apiController.createURLWithComponents(term: SearchTerm.byTitle(searchString), page: page) as NSURL?
+
+//            urlPath = OMDBSearchService.apiController.createURLWithComponents(term: SearchTerm.byTitle(searchString), page: page) as NSURL?
             searchMovieGeneric(path: urlPath!, onCompletion: onCompletion)
 
 //            path = OMDBConstants.baseUrls.omdbPath + OMDBConstants.parameters.searchTitle + "=" + searchString + "&" + OMDBConstants.parameters.page + "=" + String(page) + "&" + OMDBConstants.parameters.movieType + "=" + movieType

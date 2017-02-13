@@ -22,14 +22,16 @@ class APIController {
             return URLQueryItem(name: "i", value: imdbID)
         }
     }
+    
     private static func plotLength(by term: SearchTerm) -> URLQueryItem? {
         switch term {
-        case .byImdbID:
-            return URLQueryItem(name: "plot", value: "full")
+//        case .byImdbID:
+//            return URLQueryItem(name: "plot", value: "full")
         default:
             return nil
         }
     }
+    
     private static func pageNumber(by term: SearchTerm, page: Int = 1) -> URLQueryItem? {
         switch term {
         case .byTitle:
@@ -42,7 +44,7 @@ class APIController {
     func createURLWithComponents(term: SearchTerm, page: Int = 1) -> URL? {
         let urlComponents = NSURLComponents()
         urlComponents.scheme = "https";
-        urlComponents.host = "www.omdbapi.com";
+        urlComponents.host = "svr2.omdbapi.com";
         urlComponents.path = "";
         
         // add params

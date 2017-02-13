@@ -12,8 +12,14 @@ class FullImageCell: UITableViewCell {
     
     @IBOutlet var fullImageView: UIImageView!
     @IBOutlet var smallImageView: UIImageView!
-
     @IBOutlet var rightText: UILabel!
+    
+    //another way of setting outlets
+//    @IBOutlet var rightText: UILabel! {
+//        didSet {
+//            self.rightText.text = ""
+//        }
+//    }
     @IBOutlet var leftText: UILabel!
     
     override func awakeFromNib() {

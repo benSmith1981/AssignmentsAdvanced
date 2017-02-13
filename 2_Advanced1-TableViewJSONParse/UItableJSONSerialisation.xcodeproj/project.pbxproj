@@ -39,7 +39,10 @@
 		BE38F8DA1E43C40700DC7391 /* RealmWrite.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE38F8D81E43C40700DC7391 /* RealmWrite.swift */; };
 		BE38F8DB1E43C40700DC7391 /* RealmRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE38F8D91E43C40700DC7391 /* RealmRequest.swift */; };
 		BE38F9571E448DA000DC7391 /* RealmSearchObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE38F9561E448DA000DC7391 /* RealmSearchObject.swift */; };
+		BE56C5451E48AA5E00DF7365 /* Search.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BE56C5431E48AA5E00DF7365 /* Search.storyboard */; };
+		BE56C5471E48AA7900DF7365 /* Favourites.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BE56C5461E48AA7900DF7365 /* Favourites.storyboard */; };
 		BE6035BC1E3F8A42007D8266 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = BE6035BE1E3F8A42007D8266 /* Localizable.strings */; };
+		BE83350F1E4A8F5A00DB32FB /* RealmDeleteService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE83350E1E4A8F5900DB32FB /* RealmDeleteService.swift */; };
 		BEC5962F1E3E8DEA0066838B /* OMDBServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEC5962E1E3E8DEA0066838B /* OMDBServiceTests.swift */; };
 		BEC596331E3E9B910066838B /* OMDBSearchController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEC596321E3E9B910066838B /* OMDBSearchController.swift */; };
 		BECB993B1E33928500D600B9 /* OMDBSearchService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BECB993A1E33928500D600B9 /* OMDBSearchService.swift */; };
@@ -113,12 +116,15 @@
 		BE38F8D81E43C40700DC7391 /* RealmWrite.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RealmWrite.swift; sourceTree = "<group>"; };
 		BE38F8D91E43C40700DC7391 /* RealmRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RealmRequest.swift; sourceTree = "<group>"; };
 		BE38F9561E448DA000DC7391 /* RealmSearchObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RealmSearchObject.swift; sourceTree = "<group>"; };
+		BE56C5441E48AA5E00DF7365 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Search.storyboard; sourceTree = "<group>"; };
+		BE56C5461E48AA7900DF7365 /* Favourites.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Favourites.storyboard; sourceTree = "<group>"; };
 		BE6035B21E3F8A05007D8266 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Main.strings; sourceTree = "<group>"; };
 		BE6035B31E3F8A06007D8266 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		BE6035B41E3F8A10007D8266 /* nl */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = nl; path = nl.lproj/Main.strings; sourceTree = "<group>"; };
 		BE6035B51E3F8A10007D8266 /* nl */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = nl; path = nl.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		BE6035C01E3F8A61007D8266 /* nl */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = nl; path = nl.lproj/Localizable.strings; sourceTree = "<group>"; };
 		BE6035C11E3F8A6D007D8266 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		BE83350E1E4A8F5900DB32FB /* RealmDeleteService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RealmDeleteService.swift; sourceTree = "<group>"; };
 		BEC5962E1E3E8DEA0066838B /* OMDBServiceTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OMDBServiceTests.swift; sourceTree = "<group>"; };
 		BEC596321E3E9B910066838B /* OMDBSearchController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OMDBSearchController.swift; sourceTree = "<group>"; };
 		BECB993A1E33928500D600B9 /* OMDBSearchService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OMDBSearchService.swift; sourceTree = "<group>"; };
@@ -225,6 +231,8 @@
 				BE339B1D1E31229D002F29A2 /* DataLayer */,
 				BE339AEB1E312192002F29A2 /* AppDelegate.swift */,
 				BE339AEF1E312193002F29A2 /* Main.storyboard */,
+				BE56C5461E48AA7900DF7365 /* Favourites.storyboard */,
+				BE56C5431E48AA5E00DF7365 /* Search.storyboard */,
 				BE6035BE1E3F8A42007D8266 /* Localizable.strings */,
 				BE339AF21E312193002F29A2 /* Assets.xcassets */,
 				BE339AF41E312193002F29A2 /* LaunchScreen.storyboard */,
@@ -314,6 +322,7 @@
 		BE38F8D71E43C3F900DC7391 /* Realm */ = {
 			isa = PBXGroup;
 			children = (
+				BE83350E1E4A8F5900DB32FB /* RealmDeleteService.swift */,
 				BE38F8D81E43C40700DC7391 /* RealmWrite.swift */,
 				BE38F8D91E43C40700DC7391 /* RealmRequest.swift */,
 				BE38F9561E448DA000DC7391 /* RealmSearchObject.swift */,
@@ -452,9 +461,11 @@
 				BE38F8C41E4270A700DC7391 /* InfoCell.xib in Resources */,
 				BE6035BC1E3F8A42007D8266 /* Localizable.strings in Resources */,
 				BE339AF31E312193002F29A2 /* Assets.xcassets in Resources */,
+				BE56C5451E48AA5E00DF7365 /* Search.storyboard in Resources */,
 				BE2D581A1E3949900028D8F2 /* MovieCell.xib in Resources */,
 				BE38F8C01E4270A700DC7391 /* FullImageCell.xib in Resources */,
 				BE38F8C21E4270A700DC7391 /* TitleCell.xib in Resources */,
+				BE56C5471E48AA7900DF7365 /* Favourites.storyboard in Resources */,
 				BE339AF11E312193002F29A2 /* Main.storyboard in Resources */,
 				BE38F8C61E4270A700DC7391 /* PlotCell.xib in Resources */,
 			);
@@ -636,6 +647,7 @@
 				BE38F8C31E4270A700DC7391 /* InfoCell.swift in Sources */,
 				BE38F8CB1E4270EC00DC7391 /* Sizes.swift in Sources */,
 				BE339AEC1E312192002F29A2 /* AppDelegate.swift in Sources */,
+				BE83350F1E4A8F5A00DB32FB /* RealmDeleteService.swift in Sources */,
 				BECB993D1E3392C500D600B9 /* Enums.swift in Sources */,
 				BE38F8D21E42729900DC7391 /* ErrorObject.swift in Sources */,
 				BECB993B1E33928500D600B9 /* OMDBSearchService.swift in Sources */,
@@ -700,6 +712,14 @@
 				BE6035B51E3F8A10007D8266 /* nl */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		BE56C5431E48AA5E00DF7365 /* Search.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				BE56C5441E48AA5E00DF7365 /* Base */,
+			);
+			name = Search.storyboard;
 			sourceTree = "<group>";
 		};
 		BE6035BE1E3F8A42007D8266 /* Localizable.strings */ = {
